@@ -83,7 +83,7 @@
     }
 
     var kick = new XMLHttpRequest();
-    kick.open("Get","test.mp3",true);   //  <---- replace this file with yours
+    kick.open("Get","kick.wav",true); 
     kick.responseType = "arraybuffer";
     kick.onload = function(){
         context.decodeAudioData(kick.response, function(buffer){buffers[0] = buffer;});
@@ -91,7 +91,7 @@
     kick.send();
 
     var snare = new XMLHttpRequest();
-    snare.open("Get","test.mp3",true);  //  <---- replace this file with yours
+    snare.open("Get","snare.wav",true);
     snare.responseType = "arraybuffer";
     snare.onload = function(){
         context.decodeAudioData(snare.response, function(buffer){buffers[1] = buffer;});
@@ -99,7 +99,7 @@
     snare.send();
 
     var hihat = new XMLHttpRequest();
-    hihat.open("Get","test.mp3",true);  //  <---- replace this file with yours
+    hihat.open("Get","highhat.wav",true);
     hihat.responseType = "arraybuffer";
     hihat.onload = function(){
         context.decodeAudioData(hihat.response, function(buffer){buffers[2] = buffer;});
@@ -119,11 +119,12 @@
 
 
     function playdrum(i) {
-		var source = context.createBufferSource();  // hw
-		var gainNode = gain_nodes[i];
+		var source = context.createBufferSource();
+		var gain_node = gain_nodes[i];
+	    
 		source.buffer = buffers[i];
-		source.connect(gainNode);
-		gainNode.connect(context.destination);
+		source.connect(gain_node);
+		gain_node.connect(context.destination);
 		source.start();
     }
 
@@ -133,7 +134,7 @@
     }
 
     function db2gain(db_gain) {
-        var gain = Math.pow(10.0, (db_gain / 20.0));   //hw
+        var gain = Math.pow(10.0, (db_gain/20.0));
         return gain
     }
 
