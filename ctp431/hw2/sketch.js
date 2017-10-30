@@ -224,14 +224,14 @@ function setup() {
    	moon_space_img.hide();
 
 
-   	day_img = createImg("day.png");
+   	day_img = createImg("day.PNG");
    	day_img.hide();
 
    	sun_day_img = createImg("sun_day.png");
    	sun_day_img.hide();
 
 
-   	night_img = createImg("night.png");
+   	night_img = createImg("night.PNG");
 	night_img.hide();
 
    	moon_night_img = createImg("moon_night.png");
