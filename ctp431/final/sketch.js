@@ -217,8 +217,6 @@ function guitarLoad() {
 
    if(load%24 == 0){
 
-      loadP.hide();
-
       for(var i=1; i<=4; i++){
          for(var j=1; j<=6; j++){
             guitar[i][j].push(guitarnew[i][j]);
@@ -226,8 +224,6 @@ function guitarLoad() {
       }   
 
    }
-   else
-      loadP.show();
 
 }
 
@@ -268,8 +264,7 @@ function oscMode() {
    mode = 1;
    oscButton.style('color', 'green');
    guitarButton.style('color', 'black');
-
-   loadP.hide();   
+   
 
    for(var i = 1; i<7; i++){
       for(var j=0; j<guitar[chord+1][i].length; j++){
@@ -281,23 +276,28 @@ function oscMode() {
 
 function resetParticles() {
 
-   x.splice(0, x.length);
-   y.splice(0, y.length);
+   if(load%24 == 0){
 
-   vx.splice(0, vx.length);
-   vy.splice(0, vy.length);
+      x.splice(0, x.length);
+      y.splice(0, y.length);
 
-   ax.splice(0, ax.length);
-   ay.splice(0, ay.length);
+      vx.splice(0, vx.length);
+      vy.splice(0, vy.length);
 
-   m.splice(0, m.length);   
+      ax.splice(0, ax.length);
+      ay.splice(0, ay.length);
 
-   pcolor.splice(0, pcolor.length);
+      m.splice(0, m.length);   
 
-   for(var i = 0; i<osc.length; i++)
-      osc[i].amp(0,0.2);
+      pcolor.splice(0, pcolor.length);
 
-   osc.splice(0, osc.length);
+      for(var i = 0; i<osc.length; i++)
+         osc[i].amp(0,0.2);
+
+      osc.splice(0, osc.length);
+
+
+   }
 
 }
 
@@ -429,9 +429,13 @@ function mouseReleased() {
 
 function draw() {
 
-
-
    background(0);
+
+   if(load%24 == 0 || load == 0)
+      loadP.hide();
+   else
+      loadP.show();
+
 
    if(mode == 0){
 
@@ -454,7 +458,7 @@ function draw() {
       line(0, 300, width, 300);   
 
       strokeWeight(6);
-      line(0, 360, width, 360);   
+      line(0, 360, width, 360);  
 
    }
 
