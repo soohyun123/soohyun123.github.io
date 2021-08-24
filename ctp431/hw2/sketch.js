@@ -135,14 +135,14 @@ function setup() {
 	TitleP.style('font-size', '25pt')
 
 	/* Tutorial */
-	TutorP = createP("Tutorial: 1) Click the Earth. 2) Click the Sun. 3) Click the Moon or the Space Ship. Now You Know How It Woks.")
+	TutorP = createP("Tutorial: 1) Click the Earth. 2) Click the Sun. 3) Click the Moon or the Space Ship. Now You Know How It Works.")
 	TutorP.position(0.4*windowWidth-0.5*width
 					, 0.5*windowHeight+0.5*height+4);
 	TutorP.style('font-family', 'Roboto');
 
 	/* Name */
 
-	NameP = createP("Kim Soohyun, 2017.10.30.  Contact: tn456963@kaist.ac.kr");
+	NameP = createP("Soohyun Kim, Oct 30th, 2017.  Contact: tn456963@kaist.ac.kr");
 	NameP.position()
 	NameP.position(0.4*windowWidth-0.5*width
 					, 0.5*windowHeight+0.5*height+30);
