@@ -200,7 +200,7 @@ function setup() {
    tutorP.position(0.5*windowWidth-0.5*width-89, 0.5*windowHeight+0.5*height+75-18);
 
 
-   nameP = createP("Kim Soohyun, 2017.12.11.  Contact: tn456963@kaist.ac.kr");
+   nameP = createP("Soohyun Kim, 2017.12.11.  Contact: tn456963@kaist.ac.kr");
    nameP.position(0.5*windowWidth-0.5*width+97, 0.5*windowHeight+0.5*height+101-18);
    nameP.style('font-family', 'Roboto');
 
