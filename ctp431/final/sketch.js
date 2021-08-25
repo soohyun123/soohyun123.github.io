@@ -195,7 +195,7 @@ function setup() {
    loadP.style('font-size', '16pt');
    loadP.hide();
 
-   tutorP = createP("Tutorial: 1) Click on the Black Space. 2) Drag and Release Your Mouse. 3) Repeat. Now You Know How It Woks.");
+   tutorP = createP("Tutorial: 1) Click on the Black Space. 2) Drag and Release Your Mouse. 3) Repeat. Now You Know How It Works.");
    tutorP.style('font-family', 'Roboto');
    tutorP.position(0.5*windowWidth-0.5*width-89, 0.5*windowHeight+0.5*height+75-18);
 
